@@ -1,4 +1,9 @@
+; http://wiki.call-cc.org/eggref/4/awful
 (use awful)
+
+; http://wiki.call-cc.org/eggref/4/scss
+; http://wiki.call-cc.org/eggref/4/jsmin
+; http://wiki.call-cc.org/eggref/4/lowdown
 
 (enable-sxml #t)
 
@@ -20,5 +25,4 @@
           (input (@ (type "submit") (value "Send Request")))
         )))
   doctype: "<!DOCTYPE html>"
-  method: '(GET POST)
-  )
+  method: '(GET POST))
