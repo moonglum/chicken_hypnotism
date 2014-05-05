@@ -17,11 +17,13 @@
          (reload-apps (awful-apps))
             (handler)))
 
+(define send-page "/send")
+
 (define-page (main-page-path)
   (lambda ()
     (set-page-title! "Contact")
     `((h1 "Contact")
-      (form (@ (method "POST") (action "/send"))
+      (form (@ (method "POST") (action ,send-page))
           (input (@ (type "text") (name "name") (placeholder "Your Name")))
           (input (@ (type "email") (name "email") (placeholder "Your Mail Address")))
           (textarea (@ (name "request") (placeholder "Your Request")))
@@ -31,7 +33,7 @@
   doctype: "<!DOCTYPE html>"
   method: '(GET))
 
-(define-page "/send"
+(define-page send-page
   (lambda ()
     (set-page-title! "Thank you!")
     `((h1 "Thanks, " , ($ 'name "world") "!")))
